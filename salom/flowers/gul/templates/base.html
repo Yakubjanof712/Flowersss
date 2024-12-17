@@ -1,0 +1,33 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Flowers (Gullar)</title>
+</head>
+<body>
+    <header>
+        <h1>Flowers (Gullar)</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'barcha_gullar' %}">Barcha Gullar</a></li>
+                <li><a href="{% url 'gul_by_tur' tur.id %}">Turlar boyicha</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
+{% load gullar_tags %}
+
+{% block content %}
+<h2>Available Turlar</h2>
+<ul>
+    {% turlar as turlar %}
+    {% for tur in turlar %}
+        <li>{{ tur.nom }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

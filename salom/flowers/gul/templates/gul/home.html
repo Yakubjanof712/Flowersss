@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Asosiy Sahifa</title>
+</head>
+<body>
+    <h1>Barcha Gullar</h1>
+    <ul>
+        {% for gul in gullar %}
+            <li>{{ gul.nom }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
